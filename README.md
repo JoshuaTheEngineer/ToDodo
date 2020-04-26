@@ -1,7 +1,7 @@
 # ToDodo
 
 - Note this was written in Kotlin and I worked on it with Android Studio IDE
-- It's based off LinkedIn learning's Build a [Note-taking app](https://www.linkedin.com/learning/building-a-note-taking-app-for-android/)
+- It's based off LinkedIn learning's [Build a Note-taking app](https://www.linkedin.com/learning/building-a-note-taking-app-for-android/) and [Building an Android App with Architecture Components](https://www.linkedin.com/learning/building-an-android-app-with-architecture-components/)
 
 ## Step 1: Set up your Database
 
@@ -48,6 +48,16 @@
 3. Create a menu resource file to activate upper menu
     - Add *menu/menu_main.xml* file
     - Add menu selection in *MainActivity.kt* file
+
+4. Add a Vector Asset based on Android's preexisting Add, Edit, Delete, and Check icons
+    0. To allow custom assets,
+        - go to **build.gradle(app)**
+        - set this 'vectorDrawables.useSupportLibrary = true' under 'defaultConfig'
+    1. Right Click the **app** directory and choose 'Create New Vector Asset*
+    2. Select 'Clip Art' and search for the 'Add button'
+    3. I made it #FFFFF or white and renamed it as the *ic_add.xml*
+    4. it will be in the **drawable** directory
+    5. Repeat steps 1 to 4 with the remaining buttons
 
 ## Step (WIP): Create a Content Provider
 
