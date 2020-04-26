@@ -33,3 +33,25 @@
     3. Go to its directory then subdirectory both labelled **data**
     4. Go to the package name (found in *MainActivity* file), mine's was ***com.joshuatheengineer.tododo***
     5. Under the directory **databases**, you should find your SQL Databases
+
+## Step 2: Add some default material design
+
+1. Customize ActionBar.
+    - Remove ActionBar via *AndroidManifest*.xml file
+    - Separate content of Main Activity XML into *activity_main.xml* and *content_main.xml*
+
+2. Add FloatingActionButton
+    - Add FAB actions in *MainActivity.kt* file
+    - Add FAB button in *activity_main.xml* file
+        - com.google.android.material.floatingactionbutton.FloatingActionButton
+
+3. Create a menu resource file to activate upper menu
+    - Add *menu/menu_main.xml* file
+    - Add menu selection in *MainActivity.kt* file
+
+## Step (WIP): Create a Content Provider
+
+- A [Content Provider](https://stuff.mit.edu/afs/sipb/project/android/docs/guide/topics/providers/content-provider-creating.html) can help centralize your content so you can manage how different applications access your data.
+
+
+
