@@ -59,6 +59,8 @@
     4. it will be in the **drawable** directory
     5. Repeat steps 1 to 4 with the remaining buttons
 
+5. Adding [Lifecycle and Room dependencies](https://developer.android.com/topic/libraries/architecture/adding-components)
+
 ## Step (WIP): Create a Content Provider
 
 - A [Content Provider](https://stuff.mit.edu/afs/sipb/project/android/docs/guide/topics/providers/content-provider-creating.html) can help centralize your content so you can manage how different applications access your data.
