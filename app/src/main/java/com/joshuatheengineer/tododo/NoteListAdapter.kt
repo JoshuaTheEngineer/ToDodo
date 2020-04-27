@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.joshuatheengineer.tododo.model.NoteEntity
+import com.joshuatheengineer.tododo.database.NoteEntity
 
 class NoteListAdapter : RecyclerView.Adapter<NoteViewHolder> {
     private lateinit var mNoteList: List<NoteEntity>

@@ -1,6 +1,6 @@
 package com.joshuatheengineer.tododo.utils
 
-import com.joshuatheengineer.tododo.model.NoteEntity
+import com.joshuatheengineer.tododo.database.NoteEntity
 import java.util.*
 import kotlin.collections.ArrayList
 

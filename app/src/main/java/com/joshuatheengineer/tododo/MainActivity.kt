@@ -1,25 +1,21 @@
 package com.joshuatheengineer.tododo
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
 // Import Snackbar in Gradle 'com.google.android.material:material:1.0.0'
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.joshuatheengineer.tododo.databinding.ActivityMainBinding
 /*
     importing BUTTERKNIFE
  */
 //import butterknife.BindView
 //import butterknife.ButterKnife
-import com.joshuatheengineer.tododo.databinding.ContentMainBinding
-import com.joshuatheengineer.tododo.model.NoteEntity
+import com.joshuatheengineer.tododo.database.NoteEntity
 import com.joshuatheengineer.tododo.utils.SampleData
 
 import kotlinx.android.synthetic.main.activity_main.*

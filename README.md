@@ -91,6 +91,11 @@ Visit ***Tag v2.0.0-NotesUI***
 
 ## Step 4: Adding Data Persistence with Room
 
+1. Add @Entity and @PrimaryKey annotations to your Data Class, **NoteEntity**
+
+2. Create a DAO that will execute SQL Queries. See **NoteDAO.kt** for example
+
+3.
 
 ## Step (WIP): Create a Content Provider
 
