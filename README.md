@@ -80,6 +80,8 @@
 
 5. Added a NoteListAdapter and NoteViewHolder.
 
+6. Add a ScrollingActivity as the Editor (you can remove the EditorActity's FAB)
+
 ## Step (WIP): Create a Content Provider
 
 - A [Content Provider](https://stuff.mit.edu/afs/sipb/project/android/docs/guide/topics/providers/content-provider-creating.html) can help centralize your content so you can manage how different applications access your data.

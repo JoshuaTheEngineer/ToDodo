@@ -1,5 +1,7 @@
 package com.joshuatheengineer.tododo
 
+import android.content.Intent
+import android.content.SharedPreferences
 import android.database.sqlite.SQLiteDatabase
 // Import Snackbar in Gradle 'com.google.android.material:material:1.0.0'
 import com.google.android.material.snackbar.Snackbar
@@ -53,8 +55,9 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            // will be used to navigate to next Activity
+            var intent = Intent(this, EditorActivity::class.java)
+            startActivity(intent)
         }
 
         noteData.addAll(SampleData.getNotes()!!)
