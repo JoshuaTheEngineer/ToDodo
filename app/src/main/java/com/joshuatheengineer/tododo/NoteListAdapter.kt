@@ -7,15 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.joshuatheengineer.tododo.model.NoteEntity
 
-/*
-    Android uses Adapters to connect data with View items in the list
- */
 class NoteListAdapter : RecyclerView.Adapter<NoteViewHolder> {
-
-    // to hold your data, you need to create a linkedList of Strings
     private lateinit var mNoteList: List<NoteEntity>
-
-    // reads the layout XML description to convert it to corresponding View items
     private lateinit var mContext: Context
 
     constructor(mNoteList: List<NoteEntity>, context: Context){
@@ -36,9 +29,6 @@ class NoteListAdapter : RecyclerView.Adapter<NoteViewHolder> {
         return mNoteList.size
     }
 
-    /**
-     * Called each time the rows are refreshed with a data object
-     */
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note: NoteEntity = mNoteList.get(position)
         holder.mTextView!!.text = note.text

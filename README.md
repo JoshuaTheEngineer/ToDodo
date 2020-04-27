@@ -5,6 +5,8 @@
 
 ## Step 1: Set up your Database
 
+Visit ***Tag v1.0.0-Prep***
+
 1. Create a *utils/DBUtils* file that has the following:
     - DATABASE_NAME: String
         - name of db
@@ -36,6 +38,8 @@
 
 ## Step 2: Add some default material design
 
+Visit ***Tag v1.0.0-Prep***
+
 1. Customize ActionBar.
     - Remove ActionBar via *AndroidManifest*.xml file
     - Separate content of Main Activity XML into *activity_main.xml* and *content_main.xml*
@@ -63,6 +67,8 @@
 
 ## Step 3: Adding Note List UI
 
+Visit ***Tag v2.0.0-NotesUI***
+
 1. Add [Viewbinding](https://developer.android.com/topic/libraries/view-binding) to RecyclerView. Follow link to implement
     - To get it to work, you have to make sure your [Android Studio is upgraded to 3.6.*+](https://stackoverflow.com/questions/57947991/error-could-not-find-method-viewbinding-for-arguments)
     - Optional. In "File > Project Structure > Dependencies > App", click the add button to include latest versions of
@@ -73,14 +79,18 @@
     - you can use the constraint params from the Hello World textview
     - then remove it
     - set the layout width and height to 0dp
+    - requires a [CoordinatorLayout](https://developer.android.com/reference/kotlin/androidx/coordinatorlayout/widget/CoordinatorLayout)
 
 3. Add some Sample data to **utils/SampleData**
 
-4. Add a NoteListItem xml with a NoteEntity data object
+4. Add a NoteListItem xml with a NoteEntity [data object](https://kotlinlang.org/docs/reference/data-classes.html)
 
 5. Added a NoteListAdapter and NoteViewHolder.
 
 6. Add a ScrollingActivity as the Editor (you can remove the EditorActity's FAB)
+
+## Step 4: Adding Data Persistence with Room
+
 
 ## Step (WIP): Create a Content Provider
 

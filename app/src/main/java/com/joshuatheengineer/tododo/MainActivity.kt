@@ -25,12 +25,6 @@ import com.joshuatheengineer.tododo.utils.SampleData
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    // OPTIONAL: bind the recycler view with ButterKnife
-    // @BindView(R.id.recycler_view)
-    // lateinit var mRecyclerView: RecyclerView
-
-//    private lateinit var binding: ContentMainBinding
     private lateinit var bindingActivityMainBinding: ActivityMainBinding
     private lateinit var mAdapter: NoteListAdapter
 
@@ -41,12 +35,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Below methods will create a Writable Database
         var helper: DBOpenHelper  = DBOpenHelper(this, null, null, null)
         var database: SQLiteDatabase = helper.writableDatabase
-
-        // binds butterknife to Main Activity context
-        //ButterKnife.bind(this)
 
         bindingActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = bindingActivityMainBinding.root
@@ -55,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
 
         fab.setOnClickListener { view ->
-            // will be used to navigate to next Activity
             var intent = Intent(this, EditorActivity::class.java)
             startActivity(intent)
         }
@@ -67,11 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        // each item in the recyclerview will have the same height
-        // avoids remeasurements
-        bindingActivityMainBinding.contentMain.recyclerView.setHasFixedSize(true)
-        // sets a linear layout for recycler view
-        // and sets it recyclerview
+       bindingActivityMainBinding.contentMain.recyclerView.setHasFixedSize(true)
         var layoutManager: LinearLayoutManager = LinearLayoutManager(this)
         bindingActivityMainBinding.contentMain.recyclerView.layoutManager = layoutManager
 
@@ -79,20 +64,12 @@ class MainActivity : AppCompatActivity() {
         bindingActivityMainBinding.contentMain.recyclerView.adapter = mAdapter
     }
 
-    /**
-     * Create a menu inflater
-     * Needs a 'menu' resource XML file
-     */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)

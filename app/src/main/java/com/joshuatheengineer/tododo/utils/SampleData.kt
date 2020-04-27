@@ -7,27 +7,18 @@ import kotlin.collections.ArrayList
 
 class SampleData{
     companion object {
-        /**
-         * Sample Notes
-         */
         private const val SAMPLE_TEXT_1 = "Dodos are amazing birds"
         private const val SAMPLE_TEXT_2 = "Dodos are extinct\n except in the movie Ice Age"
         private const val SAMPLE_TEXT_3 =
             "The DoDo is an extinct flightless bird that was endemic to the island of Mauritius, east of Madagascar in the Indian Ocean.\n\n" +
                     "The dodo's closest genetic relative was the also-extinct Rodrigues solitaire, the two forming the subfamily Raphinae of the family of pigeons and doves."
 
-        /**
-         * Gets the Date from Gregorian calendar with a milisecond difference
-         */
         private fun getDate(diff: Int): Date? {
             val cal = GregorianCalendar()
             cal.add(Calendar.MILLISECOND, diff)
             return cal.getTime()
         }
 
-        /**
-         * Sends sample data
-         */
         fun getNotes(): ArrayList<NoteEntity>? {
             val notes: ArrayList<NoteEntity> = ArrayList()
             notes.add(NoteEntity(1, getDate(0), SAMPLE_TEXT_1))
