@@ -5,12 +5,35 @@ import android.database.sqlite.SQLiteDatabase
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.joshuatheengineer.tododo.databinding.ActivityMainBinding
+/*
+    importing BUTTERKNIFE
+ */
+//import butterknife.BindView
+//import butterknife.ButterKnife
+import com.joshuatheengineer.tododo.databinding.ContentMainBinding
+import com.joshuatheengineer.tododo.model.NoteEntity
+import com.joshuatheengineer.tododo.utils.SampleData
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    // OPTIONAL: bind the recycler view with ButterKnife
+    // @BindView(R.id.recycler_view)
+    // lateinit var mRecyclerView: RecyclerView
+
+//    private lateinit var binding: ContentMainBinding
+    private lateinit var bindingActivityMainBinding: ActivityMainBinding
+    private lateinit var mAdapter: NoteListAdapter
+
+
+    private var noteData: ArrayList<NoteEntity> = arrayListOf<NoteEntity>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +43,37 @@ class MainActivity : AppCompatActivity() {
         var helper: DBOpenHelper  = DBOpenHelper(this, null, null, null)
         var database: SQLiteDatabase = helper.writableDatabase
 
+        // binds butterknife to Main Activity context
+        //ButterKnife.bind(this)
+
+        bindingActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+        val view = bindingActivityMainBinding.root
+        setContentView(view)
+
+        initRecyclerView()
+
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        noteData.addAll(SampleData.getNotes()!!)
+        for (note in noteData) {
+            Log.i("ToDodoNotes", note.toString())
+        }
+    }
+
+    private fun initRecyclerView() {
+        // each item in the recyclerview will have the same height
+        // avoids remeasurements
+        bindingActivityMainBinding.contentMain.recyclerView.setHasFixedSize(true)
+        // sets a linear layout for recycler view
+        // and sets it recyclerview
+        var layoutManager: LinearLayoutManager = LinearLayoutManager(this)
+        bindingActivityMainBinding.contentMain.recyclerView.layoutManager = layoutManager
+
+        mAdapter = NoteListAdapter(noteData, this)
+        bindingActivityMainBinding.contentMain.recyclerView.adapter = mAdapter
     }
 
     /**
