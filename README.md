@@ -91,11 +91,19 @@ Visit ***Tag v2.0.0-NotesUI***
 
 ## Step 4: Adding Data Persistence with Room
 
+Note: if you use Kotlin, be sure that you use 'kapt' instead of 'annotationProcessor.' And you should add to the *build.gradle(app)*, apply plugin: 'kotlin-kapt'
+
 1. Add @Entity and @PrimaryKey annotations to your Data Class, **NoteEntity**
 
 2. Create a DAO that will execute SQL Queries. See **NoteDAO.kt** for example
 
-3.
+3. Create a [Database class](https://codelabs.developers.google.com/codelabs/kotlin-android-training-room-database/index.html#5), see **NoteDatabase.kt**
+
+4. Since the Date type isn't supported in SQL, add @TypeConverters methods. See **DBUtils.kt**
+
+5. Create a **DataBaseTest.kt** to check if it works
+
+5. Feel free to edit the **SampleData.kt**
 
 ## Step (WIP): Create a Content Provider
 

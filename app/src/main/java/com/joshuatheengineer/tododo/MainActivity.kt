@@ -1,8 +1,6 @@
 package com.joshuatheengineer.tododo
 
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
-// Import Snackbar in Gradle 'com.google.android.material:material:1.0.0'
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,11 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.joshuatheengineer.tododo.databinding.ActivityMainBinding
-/*
-    importing BUTTERKNIFE
- */
-//import butterknife.BindView
-//import butterknife.ButterKnife
+
 import com.joshuatheengineer.tododo.database.NoteEntity
 import com.joshuatheengineer.tododo.utils.SampleData
 
@@ -23,16 +17,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private lateinit var bindingActivityMainBinding: ActivityMainBinding
     private lateinit var mAdapter: NoteListAdapter
-
-
     private var noteData: ArrayList<NoteEntity> = arrayListOf<NoteEntity>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        var helper: DBOpenHelper  = DBOpenHelper(this, null, null, null)
-        var database: SQLiteDatabase = helper.writableDatabase
 
         bindingActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = bindingActivityMainBinding.root
@@ -52,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-       bindingActivityMainBinding.contentMain.recyclerView.setHasFixedSize(true)
+        bindingActivityMainBinding.contentMain.recyclerView.setHasFixedSize(true)
         var layoutManager: LinearLayoutManager = LinearLayoutManager(this)
         bindingActivityMainBinding.contentMain.recyclerView.layoutManager = layoutManager
 

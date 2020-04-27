@@ -19,7 +19,7 @@ class SampleData{
             return cal.getTime()
         }
 
-        fun getNotes(): ArrayList<NoteEntity>? {
+        fun getNotes(): List<NoteEntity>? {
             val notes: ArrayList<NoteEntity> = ArrayList()
             notes.add(NoteEntity(1, getDate(0), SAMPLE_TEXT_1))
             notes.add(NoteEntity(2, getDate(-1), SAMPLE_TEXT_2))
